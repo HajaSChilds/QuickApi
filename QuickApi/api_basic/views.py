@@ -17,6 +17,12 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
+#For Model Viewsets - inherits from GenericApiView uses ArticleViewset(viewsets.ModelViewset) then serializer_class = ArticleSerializer and queryset = Article.objects.all()
+
+#For Generic Viewsets use ArticleViewSet(viewsets.GenericViewset) + a mixin for each CRUD function.  serializer_class = ArticleSerializer
+# queryset = Article.objects.all()
+ 
+
 class ArticleViewSet(viewsets.ViewSet):
     def list(self, request):
         articles = Article.objects.all()
